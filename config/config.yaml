@@ -27,19 +27,23 @@ chart_interval: 15
 
 # Hardware Configuration
 # --------------------
-# Camera type: 'pi' for Camera Module 3 (default), 'arducam' for Arducam IMX519
-camera_type: arducam
+# Camera type: 
+# IMX500 for Raspberry Pi AI Camera / Sony
+camera_type: imx500
 
 # Camera settings
 camera:
-  width: 1920
-  height: 1440
+  #IMX500 2x2 binned mode
+  width: 2028
+  height: 1520
   framerate: 30
-  autofocus_enabled: false  # Disable autofocus for stability
+  #IMX500 has manual/mechanical focus
+  autofocus_enabled: false  # No software autofocus
   autofocus_mode: false     # Keep autofocus mode disabled
+  # Exposure / sensitivity
   gain: 4.0                 # Very high gain for maximum brightness
   timeout: 8000             # Reduced timeout to prevent long waits
-  lens_position: 10          # Medium distance focus (1 meter) - more stable than 10cm
+  # lens_position: 10         not used
   exposure: normal          # Normal exposure mode (other options: sport, night)
   ev: 4.0                   # Very high exposure value for maximum brightness
 
